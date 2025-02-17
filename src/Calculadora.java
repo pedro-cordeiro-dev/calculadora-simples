@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Calculadora {
 
     public String operacao;
@@ -27,6 +29,24 @@ public class Calculadora {
                 throw new IllegalArgumentException("operação desconhecida:" + operacao);
         }
 
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("no momento temos as seguintes operações disponiveis: somar(+), subtrair(-), multiplicar(*), dividir(/), resto(%)");
+
+        System.out.println("qual operação(simbolo) deseja realizar: ");
+        String operacao = scanner.nextLine();
+
+        System.out.println("digite o primeiro numero: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.println("digite o segundo numero: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.println("resultado: " + calcular(num1, num2, operacao));
     }
 
 }
